@@ -1,0 +1,192 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Endless Scroll</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <link rel="stylesheet" type="text/css" href="scroll-stylesheet-3.css">
+  <link rel="icon" href="images/scroll.ico" type="image/x-icon">
+
+  <script type="text/javascript">
+
+    $(function () {
+
+      // Strings
+      const CAPTION = 'GRAPHIC DESIGN SENIOR SHOW',
+        TITLE_1 = `ENDLESS`,
+        TITLE_2 = `SCROLL`,
+        PLACE = `WOODS GERRY`,
+        DATE_1 = `THURSDAY, MARCH 7TH`
+      DATE_2 = `6:00PM - 8:00PM`;
+
+      const GRADUATING = [
+        ['Tanya Agarwal', 'https://www.agarwaltanya.com/'],
+        ['Urooj Ali', 'https://uroojali.com/'],
+        ['Brigitte Breaux'],
+        ['Rohan Chaurasia', 'https://rohanchau.com/'],
+        ['Michael Cheong', 'http://michael-cheong.com/index.html'],
+        ['Sang Ji Choi'],
+        ['Aedan Clark', 'https://aedanclark.com/'],
+        ['Max Crawley'],
+        ['Kevin Dong', 'http://www.kevindong.site/'],
+        ['Theia Flynn'],
+        ['Isaiah Gernhardt', 'http://www.igernhardt.com/portfolio/'],
+        ['Karen Guan'],
+        ['Amelia Hall'],
+        ['A.J. Hansen', 'http://www.andreajanehansen.com/'],
+        ['Matthew Ho', 'http://www.madebymatthewho.com/'],
+        ['Brittany Huang', 'http://www.brehuang.com/'],
+        ['Rhea Jain', 'https://www.rhea-jain.com/'],
+        ['Julian Kelly', 'https://juliankellydesign.com'],
+        ['Arthur Kim', 'http://arthur-kim.com/'],
+        ['Yoon Shik Kim', 'http://yoonshikkim.com/'],
+        ['Nicholas Konrad', 'https://www.nicholaskonrad.com/'],
+        ['Anh Le'],
+        ['Ja Yoon Lee', 'https://jayoonlee.com/'],
+        ['Liz Lee', 'https://www.lizyslee.com/'],
+        ['So Hyun Lee', 'https://www.sohyunlee.com/'],
+        ['Jess Lin'],
+        ['Ting Loetaphirom', 'https://tingloet.com/'],
+        ['Michelle Lu', 'https://www.michelllu.com/'],
+        ['Kate Mao', 'https://www.katemao.work/'],
+        ['Katie McIntyre', 'https://www.katiemcintyredesign.com/'],
+        ['Fabiola Millan'],
+        ['Ashley Min', 'https://ashleymin.com/'],
+        ['Dani Moalem', 'https://daniellemoalem.com/projects'],
+        ['Mallika Nanda', 'http://mallikananda.com/'],
+        ['Ryan Nguyen', 'http://www.ryannguyen.design/'],
+        ['Hyeon Noh'],
+        ['Anya Parakh', 'https://anyaparakh.com/'],
+        ['Jinny Park', 'https://www.yoojeanpark.com/'],
+        ['Zoe Schneider', 'https://zoe-schneider.com/work'],
+        ['Joshua Shao', 'https://joshuashao.design/'],
+        ['Henry Song'],
+        ['Sophia Spitulnik', 'https://sophiaspitulnik.com/'],
+        ['Natvipa Tejapaibul', 'https://www.nanateja.com/'],
+        ['Kathy Vizcardo'],
+        ['Alberta Wang', 'https://albertawang.com/'],
+        ['Naiqian Wang'],
+        ['Yu Tim Candy Wang', 'https://candywang.com/'],
+        ['Raina Wellman', 'https://rainawellman.com/'],
+        ['Gabby Widjaja', 'https://widjaja.io/'],
+        ['Stephanie Winarto', 'https://stephaniewinarto.com/'],
+        ['Samantha Wong', 'https://samanthawongdesigns.com/'],
+        ['Melody Xu', 'https://melodyxu.myportfolio.com/graphic-design'],
+        ['Wendy Yang'],
+        ['Ji Chen Jason Yuan', 'https://jasonyuan.design/'],
+        ['Jack Yuen'],
+        ['Wenxi Zhang', 'http://www.wenxizhang.com/about'],
+        ['Jerry Zong', 'https://jzong.myportfolio.com/projects']
+      ];
+
+      const COLORS = [
+        '#ed1c24',
+        '#00a79d',
+        '#92278f',
+        '#926b3d'
+      ];
+
+      // jumbleLetters takes a string, and a number
+      // between 0-1 for the likelihood of a letter
+      // being replaced
+
+      var jumbleLetters = function (letters, strength) {
+        var jumbledHTML = '';
+
+        for (var i = 0; i < letters.length; i++) {
+          var letter = letters.charAt(i);
+          var rand = Math.random();
+          var rand2 = Math.random();
+          if (rand < strength) {
+            if (rand2 > 0.6) {
+              jumbledHTML += `<span class='nomargins ss01'>${letter}</span>`;
+            } else if (rand2 < 0.3) {
+              jumbledHTML += `<span class='nomargins'>${letter}</span>`;
+            } else {
+              jumbledHTML += `<span class='nomargins ss02'>${letter}</span>`;
+            }
+          } else {
+            jumbledHTML += letter;
+          }
+        }
+
+        return (jumbledHTML);
+      }
+
+      // this generates one section of the page
+
+      var generateSection = function () {
+        var rand = Math.floor(Math.random() * COLORS.length);
+        var chosenColor = COLORS[rand];
+        var borderStyle = `style="border-bottom: 1px solid ${chosenColor}"`;
+        var colorStyle = `style="color: ${chosenColor}"`;
+
+        var sectionHTML = `<div class="content-block" ${colorStyle}>
+                                        <div class="gdshow" ${borderStyle}>GRAPHIC DESIGN SENIOR SHOW 2019</div>
+                                        <div class="endless" ${borderStyle}>${jumbleLetters(TITLE_1, 0.5)}<br>${jumbleLetters(TITLE_2, 0.5)}</div>
+                                        <div class="place" ${borderStyle}>${jumbleLetters(PLACE, 0.3)}</div>
+                                        <div class="date" ${borderStyle}>${jumbleLetters(DATE_1, 0.1)}<br>${jumbleLetters(DATE_2, 0.1)}</div>
+                                    </div>`
+        return (sectionHTML);
+      }
+
+      // now we add sections until the page is full
+
+      for (var i = 0; i < 10; i++) {
+        $('#parent-div').append(generateSection());
+      }
+
+      // Populate list of graduating students
+      var graduatingLength = GRADUATING.length;
+      var menuContent = $('#menu-content');
+      for (var i = 0; i < graduatingLength; i++) {
+        var gradName = GRADUATING[i][0];
+        if (GRADUATING[i][1]) {
+          var gradURL = GRADUATING[i][1];
+          menuContent.append(`<div class="grad"><a href="${gradURL}">${gradName}</a></div>`);
+        } else {
+          menuContent.append(`<div class="grad">${gradName}</div>`);
+        }
+      }
+
+      // Menu open/close
+
+      $('.nomargins').click(function () {
+        $('#parent-div').toggleClass('active');
+        $('#menu').toggleClass('active');
+      })
+
+
+    })
+
+    function scrolled(page) {
+      //visible height + pixel scrolled = total height 
+      if (page.offsetHeight + page.scrollTop == page.scrollHeight) {
+        $("#parent-div,.innerDiv").animate({ scrollTop: -200 }, 1);
+
+        updateMenuColors();
+      }
+    }
+
+  </script>
+
+</head>
+
+<body>
+  <div onscroll="scrolled(this)" id="parent-div">
+
+  </div>
+  <div id="menu">
+    <div id="menu-title">
+      Graduating(?)
+    </div>
+    <div id="menu-content">
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>

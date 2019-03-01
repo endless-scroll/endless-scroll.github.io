@@ -1,0 +1,135 @@
+@font-face {
+    font-family: "nomargins";
+    src: url(nomargins-regular.otf);
+  }
+
+body {
+    margin: 0; 
+    padding: 0;
+    font-size: 3vw;
+    font-family: Arial, sans-serif;
+    overflow-y: hidden; /*hidden body scroll but visible parentDiv scroll */
+}
+
+div {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar { /*background of scrollbar */
+    -webkit-appearance: scroll;
+    width: /*15px*/0px;
+    height: /*10px*/0px;
+    background-color: white;
+}
+
+::-webkit-scrollbar-thumb { /*thumb of scrollbar */
+    border-radius: /*10px*/0px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1pt;
+    height: /*10px*/0px; /* perhaps better if invisible? */
+    width: /*15px*/0px;  /* or is the scrollbar a key element? */
+    background-color: white;
+}
+
+
+#parent-div {
+    background-color: /*#ebff00*/ white;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    user-select: none;
+    transition: width 0.25s;
+}
+
+#parent-div.active {
+    width: 66vw;
+}
+
+#menu {
+    width: 34vw;
+    transform: translateX(34vw);
+    transition: transform 0.25s;
+    border-left: 1px solid black;
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    line-height: 0.9em;
+    overflow-y: scroll;
+}
+
+#menu-title {
+    text-transform: uppercase;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid black;
+}
+
+#menu-content {
+    padding: 0.75rem 1rem;
+}
+
+.grad {
+    margin-top: 0.75rem;
+}
+
+#menu.active {
+    transform: translateX(0);
+}
+
+.gdshow, .endless, .place, .date {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid black;
+    line-height: 0.9em;
+}
+
+.gdshow {
+    text-align: justify;
+    text-align-last: justify;
+    font-size: 1em;
+
+}
+
+.endless {
+    font-size: 3.5em;
+    text-align: left;
+}
+
+.place {
+    text-align: right;
+    font-size: 2.25em;
+}
+
+.date {
+    text-align: left;
+    font-size: 2.25em;
+}
+
+span.nomargins {
+    font-family: "nomargins";
+    transition: transform 0.25s;
+    display: inline-block;
+}
+
+span.nomargins:hover {
+    color: black;
+    cursor: pointer;
+    transform: rotate(180deg);
+}
+
+span.ss01 {
+    font-feature-settings: "ss01";
+}
+
+span.ss02 {
+    font-feature-settings: "ss02";
+}
+
+#menu-content a {
+    color: inherit;
+    text-decoration: none;
+}
+
+#menu-content a:hover {
+    color: #ed1c24;
+}
