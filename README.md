@@ -1,4 +1,3 @@
-# endless-scroll | RISD Class of 2019 Senior Show
+# Endless Scroll | RISD Class of 2019 Senior Show
 
-## Rhode Island School of Design 
-### Graphic Design Class of 2019
+### Rhode Island School of Design—Graphic Design Class of 2019
