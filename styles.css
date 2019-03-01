@@ -1,6 +1,6 @@
 @font-face {
     font-family: "nomargins";
-    src: url(nomargins-regular.otf);
+    src: url(fonts/nomargins-regular.otf);
   }
 
 body {
@@ -9,6 +9,7 @@ body {
     font-size: 3vw;
     font-family: Arial, sans-serif;
     overflow-y: hidden; /*hidden body scroll but visible parentDiv scroll */
+    cursor: url("https://unpkg.com/nes.css@2.1.0/assets/cursor.png"),auto;
 }
 
 div {
@@ -31,7 +32,6 @@ div {
     width: /*15px*/0px;  /* or is the scrollbar a key element? */
     background-color: white;
 }
-
 
 #parent-div {
     background-color: /*#ebff00*/ white;
@@ -113,7 +113,7 @@ span.nomargins {
 
 span.nomargins:hover {
     color: black;
-    cursor: pointer;
+    cursor: url("https://unpkg.com/nes.css@2.1.0/assets/cursor-click.png"),auto;
     transform: rotate(180deg);
 }
 
@@ -128,6 +128,7 @@ span.ss02 {
 #menu-content a {
     color: inherit;
     text-decoration: none;
+    cursor: url("https://unpkg.com/nes.css@2.1.0/assets/cursor-click.png"),auto;
 }
 
 #menu-content a:hover {
