@@ -4,9 +4,10 @@
 <head>
   <title>Endless Scroll</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="http://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <link rel="stylesheet" type="text/css" href="styles.css">
   <link rel="icon" href="images/scroll.ico" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <script type="text/javascript">
 
@@ -156,8 +157,6 @@
         $('#parent-div').toggleClass('active');
         $('#menu').toggleClass('active');
       })
-
-
     })
 
     function scrolled(page) {
@@ -168,14 +167,11 @@
         updateMenuColors();
       }
     }
-
   </script>
-
 </head>
 
 <body>
   <div onscroll="scrolled(this)" id="parent-div">
-
   </div>
   <div id="menu">
     <div id="menu-title">
@@ -185,8 +181,6 @@
 
     </div>
   </div>
-
-
 </body>
 
 </html>
