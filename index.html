@@ -144,7 +144,7 @@
         var gradName = GRADUATING[i][0];
         if (GRADUATING[i][1]) {
           var gradURL = GRADUATING[i][1];
-          menuContent.append(`<div class="grad"><a href="${gradURL}">${gradName}</a></div>`);
+          menuContent.append(`<div class="grad"><a href="${gradURL}" target="href">${gradName}</a></div>`);
         } else {
           menuContent.append(`<div class="grad">${gradName}</div>`);
         }
