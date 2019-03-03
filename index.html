@@ -31,7 +31,7 @@
         ['Aedan Clark', 'https://aedanclark.com/'],
         ['Max Crawley'],
         ['Kevin Dong', 'http://www.kevindong.site/'],
-        ['Theia Flynn'],
+        ['Theia Flynn', 'https://theiaflynn.github.io/hi/index.html'],
         ['Isaiah Gernhardt', 'http://www.igernhardt.com/portfolio/'],
         ['Karen Guan'],
         ['Amelia Hall'],
@@ -115,13 +115,16 @@
         return (jumbledHTML);
       }
 
-      // this generates one section of the page
+      //Make Colors global
+      var rand = Math.floor(Math.random() * COLORS.length);
+      var chosenColor = COLORS[rand];
+      var borderStyle = `style="border-bottom: 1px solid ${chosenColor}"`;
+      var colorStyle = `style="color: ${chosenColor}"`;
 
+
+      // this generates one section of the page
       var generateSection = function () {
-        var rand = Math.floor(Math.random() * COLORS.length);
-        var chosenColor = COLORS[rand];
-        var borderStyle = `style="border-bottom: 1px solid ${chosenColor}"`;
-        var colorStyle = `style="color: ${chosenColor}"`;
+
 
         var sectionHTML = `<div class="content-block" ${colorStyle}>
                                         <div class="gdshow" ${borderStyle}>GRAPHIC DESIGN SENIOR SHOW 2019</div>
@@ -141,13 +144,15 @@
       // Populate list of graduating students
       var graduatingLength = GRADUATING.length;
       var menuContent = $('#menu-content');
+
+
       for (var i = 0; i < graduatingLength; i++) {
         var gradName = GRADUATING[i][0];
         if (GRADUATING[i][1]) {
           var gradURL = GRADUATING[i][1];
-          menuContent.append(`<div class="grad"><a href="${gradURL}" target="href">${gradName}</a></div>`);
+          menuContent.append(`<div class="grad" ${colorStyle}><a href="${gradURL}" target="href" >${gradName}</a></div>`);
         } else {
-          menuContent.append(`<div class="grad">${gradName}</div>`);
+          menuContent.append(`<div class="grad"${colorStyle}>${gradName}</div>`);
         }
       }
 

@@ -70,6 +70,7 @@ div {
 }
 
 .grad {
+    color:inherit;
     margin-top: 0.75rem;
 }
 
@@ -112,11 +113,9 @@ span.nomargins {
 }
 
 span.nomargins:hover {
+  color:black;
   cursor: url("https://unpkg.com/nes.css@2.1.0/assets/cursor-click.png"),auto;
   transform: rotate(180deg);
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 
 span.ss01 {
@@ -127,15 +126,13 @@ span.ss02 {
     font-feature-settings: "ss02";
 }
 
-#menu-content a {
-    color: inherit;
-    text-decoration: none;
+#menu-content a{
+  color: inherit;
+  text-decoration: none;
 }
 
 #menu-content a:hover {
-  background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color:black;
   cursor: url("test.png") 64 64,auto;
 }
 
