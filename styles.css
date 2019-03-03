@@ -1,7 +1,12 @@
 @font-face {
-    font-family: "nomargins";
-    src: url(fonts/nomargins-regular.otf);
+    font-family: "thumbcramp";
+    src: url(fonts/thumbcramp.otf);
   }
+
+@font-face {
+  font-family: "thumbcramp-dingbats";
+  src: url(fonts/thumbcramp-dingbats.otf);
+}
 
 body {
     margin: 0; 
@@ -59,17 +64,18 @@ div {
     overflow-y: scroll;
 }
 
-#menu-title {
+#menu-title, #download-otf {
     text-transform: uppercase;
     padding: 0.75rem 1rem;
     border-bottom: 1px solid black;
 }
 
+#download-otf{
+  border-top: 1px solid black;
+}
+
 #download-otf a{
-  font-size: 1em;
-  text-transform: uppercase;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid black;
+  text-decoration: none;
 }
 
 #menu-content {
@@ -95,7 +101,7 @@ div {
     text-align: justify;
     text-align-last: justify;
     font-size: 1em;
-
+    
 }
 
 .endless {
@@ -114,7 +120,7 @@ div {
 }
 
 span.nomargins {
-    font-family: "nomargins";
+    font-family: "thumbcramp";
     transition: transform 0.25s;
     display: inline-block;
 }
