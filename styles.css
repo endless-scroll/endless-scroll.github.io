@@ -65,6 +65,13 @@ div {
     border-bottom: 1px solid black;
 }
 
+#download-otf a{
+  font-size: 1em;
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid black;
+}
+
 #menu-content {
     padding: 0.75rem 1rem;
 }

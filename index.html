@@ -116,16 +116,15 @@
       }
 
       //Make Colors global
-      var rand = Math.floor(Math.random() * COLORS.length);
-      var chosenColor = COLORS[rand];
-      var borderStyle = `style="border-bottom: 1px solid ${chosenColor}"`;
-      var colorStyle = `style="color: ${chosenColor}"`;
+
 
 
       // this generates one section of the page
       var generateSection = function () {
-
-
+        var rand = Math.floor(Math.random() * COLORS.length);
+        var chosenColor = COLORS[rand];
+        var borderStyle = `style="border-bottom: 1px solid ${chosenColor}"`;
+        var colorStyle = `style="color: ${chosenColor}"`;
         var sectionHTML = `<div class="content-block" ${colorStyle}>
                                         <div class="gdshow" ${borderStyle}>GRAPHIC DESIGN SENIOR SHOW 2019</div>
                                         <div class="endless" ${borderStyle}>${jumbleLetters(TITLE_1, 0.5)}<br>${jumbleLetters(TITLE_2, 0.5)}</div>
@@ -145,11 +144,13 @@
       var graduatingLength = GRADUATING.length;
       var menuContent = $('#menu-content');
 
-
       for (var i = 0; i < graduatingLength; i++) {
         var gradName = GRADUATING[i][0];
         if (GRADUATING[i][1]) {
           var gradURL = GRADUATING[i][1];
+          var rand = Math.floor(Math.random() * COLORS.length);
+          var chosenColor = COLORS[rand];
+          var colorStyle = `style="color: ${chosenColor}"`;
           menuContent.append(`<div class="grad" ${colorStyle}><a href="${gradURL}" target="href" >${gradName}</a></div>`);
         } else {
           menuContent.append(`<div class="grad"${colorStyle}>${gradName}</div>`);
@@ -182,6 +183,11 @@
     <div id="menu-title">
       Graduating(?)
     </div>
+
+    <!-- <div id="download-otf">
+      <a href="fonts/nomargins-regular.otf">DOWNLOAD NO MARGINS.OTF</a>
+    </div> -->
+
     <div id="menu-content">
 
     </div>
