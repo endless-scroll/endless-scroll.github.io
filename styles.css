@@ -76,6 +76,7 @@ div {
 
 #download-otf a{
   text-decoration: none;
+  cursor: cursor: url("https://unpkg.com/nes.css@2.1.0/assets/cursor-click.png"),auto;
 }
 
 #menu-content {
